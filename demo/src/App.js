@@ -6,9 +6,9 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import TongQuan from './component/TongQuan';
+import Overview from './component/Overview';
 import SchoolEducation from './component/SchoolEducation';
-import Typography from '@material-ui/core/Typography';
+import HeaderTitle from './component/HeaderTitle';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,16 +53,10 @@ export default function App() {
     <div className={classes.root}>
       <div className={classes.main}>
         {/* Header */}
-        <div className={classes.section1}>
-          <Grid container alignItems="center">
-            <Grid item xs>
-              <Typography gutterBottom variant="h6">
-                Giới thiệu (version 2)
-              </Typography>
-            </Grid>
-          </Grid>
-        </div>
+        <HeaderTitle title="Giới thiệu (version 3)" />
         <Divider />
+        
+        {/* Menu */}
         <div className={classes.section2}>
           <Grid container spacing={3}>
             <Grid item sm={3} xs={12}>
@@ -108,7 +102,7 @@ export default function App() {
               </Paper>
             </Grid>
             {/* Body */}
-            {ui === 0 && <TongQuan />}
+            {ui === 0 && <Overview />}
             {ui === 1 && <SchoolEducation />}
           </Grid>
         </div>

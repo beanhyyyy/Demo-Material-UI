@@ -4,10 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
@@ -20,6 +16,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Box from '@material-ui/core/Box';
 import EditIcon from "@material-ui/icons/Edit";
+import Item from './Item';
+import ItemRight from './ItemRight';
 
 const options = [" Sửa ", "Xóa"];
 
@@ -37,40 +35,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TongQuan() {
+export default function Overview() {
   const classes = useStyles();
-
-  const Item = (props) => (
-    <ListItem >
-      <ListItemAvatar>
-        <Avatar>
-          {props.icon}
-        </Avatar>
-      </ListItemAvatar>
-      <ListItemText primary={props.text} secondary={props.secondText} />
-    </ListItem>
-  )
-
-  const ItemRight = (props) => (
-    <ListItem>
-      <ListItemAvatar>
-        <Avatar>
-          {props.icon}
-        </Avatar>
-      </ListItemAvatar>
-      <ListItemText primary={props.text} />
-    </ListItem>
-  )
 
   // button More
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const open = Boolean(anchorEl);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -110,7 +83,6 @@ export default function TongQuan() {
                   p={1}
                   m={1}
                   bgcolor="background.paper"
-                // css={{ maxWidth: 300 }}
                 >
                   <Box>
                     <Item key={i.id}  {...i} />
@@ -154,7 +126,6 @@ export default function TongQuan() {
           </List>
         </Paper>
       </Grid>
-
       {/* col 3 */}
       <Grid item sm={3} xs={12} >
         <Paper className={classes.paper}>
