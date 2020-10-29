@@ -10,18 +10,11 @@ import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import PhoneIphone from '@material-ui/icons/PhoneIphone';
 import Cake from '@material-ui/icons/Cake';
 import Wc from '@material-ui/icons/Wc';
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Box from '@material-ui/core/Box';
-import EditIcon from "@material-ui/icons/Edit";
 import Item from './Item';
 import ItemRight from './ItemRight';
-
-const options = [" Sửa ", "Xóa"];
-
-const ITEM_HEIGHT = 48;
+import ButtonMore from './ButtonMore';
+import ButtonEdit from './ButtonEdit';
 
 const useStyles = makeStyles((theme) => ({
   list2: {
@@ -30,23 +23,10 @@ const useStyles = makeStyles((theme) => ({
   list3: {
     backgroundColor: theme.palette.background.paper,
   },
-  rightButtons: {
-    float: 'right'
-  },
 }));
 
 export default function Overview() {
   const classes = useStyles();
-
-  // button More
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <>
@@ -88,37 +68,7 @@ export default function Overview() {
                     <Item key={i.id}  {...i} />
                   </Box>
                   <Box ml="auto">
-                    <IconButton
-                      aria-label="more"
-                      aria-controls="long-menu"
-                      aria-haspopup="true"
-                      onClick={handleClick}
-                    >
-                      <MoreHorizIcon />
-                    </IconButton>
-                    <Menu
-                      id="long-menu"
-                      anchorEl={anchorEl}
-                      keepMounted
-                      open={open}
-                      onClose={handleClose}
-                      PaperProps={{
-                        style: {
-                          maxHeight: ITEM_HEIGHT * 4.5,
-                          width: "10ch"
-                        }
-                      }}
-                    >
-                      {options.map((option) => (
-                        <MenuItem
-                          key={option}
-                          selected={option === "Pyxis"}
-                          onClick={handleClose}
-                        >
-                          {option}
-                        </MenuItem>
-                      ))}
-                    </Menu>
+                    <ButtonMore numberCheck="1" />
                   </Box>
                 </Box>
               </div>
@@ -131,15 +81,8 @@ export default function Overview() {
         <Paper className={classes.paper}>
           <List className={classes.list3}>
             {/* button right */}
-            <div className={classes.rightButtons}>
-              <IconButton
-                aria-label="more"
-                aria-controls="long-menu"
-                aria-haspopup="true"
-              >
-                <EditIcon />
-              </IconButton>
-            </div>
+            <ButtonEdit />
+            
             {/* Value */}
             {[
               {

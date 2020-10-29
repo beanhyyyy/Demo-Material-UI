@@ -1,18 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from "@material-ui/core/IconButton";
-import Box from '@material-ui/core/Box';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import AddSharpIcon from "@material-ui/icons/AddSharp";
-import TextField from '@material-ui/core/TextField';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import ModelTextField from './ModelTextField';
+import ModelTextField2Item from './ModelTextField2Item';
+import ModelTextField3Item from './ModelTextField3Item';
+import ModelTextArea from './ModelTextArea';
+import ModelRadioButton from './ModelRadioButton';
+import GroupButton from './GroupButton';
+import Divider from '@material-ui/core/Divider';
+import NativeSelects from './NativeSelects';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -40,123 +40,22 @@ const useStyles = makeStyles((theme) => ({
         width: '85%',
         fontSize: '1rem',
     },
+    styleDivider: {
+        width: '100%',
+    },
 }));
-
-// Model-TextField-1-row
-const ModelTextFiled = (props) => {
-    return (
-        <TextField
-            label={props.labelTextField1}
-            variant="outlined"
-            color="filled"
-        />
-    )
-}
-
-// Model-TextField-2-row
-const ModelTextFiled2Item = (props) => {
-    return (
-        <>
-            <TextField
-                label={props.labelTextField1}
-                variant="outlined"
-                color="filled"
-            />
-            <TextField
-                label={props.labelTextField2}
-                variant="outlined"
-                color="filled"
-            />
-        </>
-    )
-}
-
-// Model-TextField-3-row
-const ModelTextFiled3Item = (props) => {
-    return (
-        <>
-            <TextField
-                label={props.labelTextField1}
-                variant="outlined"
-                color="filled"
-            />
-            <TextField
-                label={props.labelTextField2}
-                variant="outlined"
-                color="filled"
-            />
-            <TextField
-                label={props.labelTextField3}
-                variant="outlined"
-                color="filled"
-            />
-        </>
-    )
-}
-
-// Model-TextAre
-const ModelTextArea = (props) => {
-    const classes = useStyles();
-
-    return (
-        <TextareaAutosize
-            className={classes.styleTextArea}
-            rowsMin={7}
-            rowsMax={10}
-            placeholder={props.placeholder}
-        />
-    )
-}
-
-// Model-RadioButton
-const ModelRadioButton = (props) => {
-    return (
-        <FormControl component="fieldset">
-            <Box
-                display="flex"
-                flexWrap="nowrap"
-                bgcolor="background.paper"
-            >
-                <Box>
-                    <FormLabel component="legend">{props.title}</FormLabel>
-                </Box>
-                <Box p={1}>
-                    <RadioGroup aria-label="gender" name="gender1">
-                        <Box
-                            display="flex"
-                            flexWrap="nowrap"
-                            bgcolor="background.paper"
-                        >
-                            <Box p={1}>
-                                <FormControlLabel value="1" control={<Radio />} label={props.label1} />
-                            </Box>
-                            <Box p={1}>
-                                <FormControlLabel value="2" control={<Radio />} label={props.label2} />
-                            </Box>
-                        </Box>
-                    </RadioGroup>
-                </Box>
-            </Box>
-        </FormControl>
-    )
-}
 
 // Model-Full
 const ModelFull = (props) => {
     const classes = useStyles();
     //Button modal
     const [openModal, setOpen] = React.useState(null);
-
     const handleOpenModal = () => {
         setOpen(true);
     };
-
     const handleCloseModal = () => {
         setOpen(null);
     };
-
-    //Data-Picker
-   
     return (
         <div>
             <div className={classes.rightButtons} onClick={handleOpenModal}>
@@ -186,7 +85,7 @@ const ModelFull = (props) => {
                                 switch (props.numberCheck) {
                                     case "3":
                                         return (
-                                            <ModelTextFiled3Item
+                                            <ModelTextField3Item
                                                 labelTextField1={props.labelTextField1}
                                                 labelTextField2={props.labelTextField2}
                                                 labelTextField3={props.labelTextField3}
@@ -194,38 +93,46 @@ const ModelFull = (props) => {
                                         );
                                     case "2":
                                         return (
-                                            <ModelTextFiled2Item
+                                            <ModelTextField2Item
                                                 labelTextField1={props.labelTextField1}
                                                 labelTextField2={props.labelTextField2}
                                             />
                                         );
                                     case "1":
                                         return (
-                                            <ModelTextFiled
+                                            <ModelTextField
                                                 labelTextField1={props.labelTextField1}
                                             />
                                         );
                                     default:
                                         return (
-                                            <ModelTextFiled3Item
-                                                labelTextField1={props.labelTextField1}
-                                                labelTextField2={props.labelTextField2}
-                                                labelTextField3={props.labelTextField3}
-                                            />
+                                            alert('Model Full : Not Checknumber')
                                         );
                                 }
                             })()}
-                            <ModelTextArea
-                                placeholder={props.placeholder}
-                            />
-                            {/* Button-Radio */}
-                            <ModelRadioButton
+
+                            {/* Check and Render ModelTextArea*/}
+                            {
+                                typeof props.placeholder === "string" && <ModelTextArea placeholder={props.placeholder} />
+                            }
+
+                            {/* Check and Render Button-Radio*/}
+                            {
+                                typeof props.title === "string" && 
+                                <ModelRadioButton
                                 title={props.title}
                                 label1={props.label1}
                                 label2={props.label2}
-                            />
-                            {/* Date-Picker */}
+                                />
+                            }
+
+                            {/* Check and Render Native-Selects*/}
+                            {
+                                typeof props.select === "string" && <NativeSelects />
+                            }
                             
+                            <Divider className={classes.styleDivider} />
+                            <GroupButton />
                         </form>
                     </div>
                 </Fade>

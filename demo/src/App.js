@@ -9,6 +9,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Overview from './component/Overview';
 import SchoolEducation from './component/SchoolEducation';
 import HeaderTitle from './component/HeaderTitle';
+import Homeland from './component/Homeland';
+import Contact from './component/Contact';
+import FamilyRelationship from './component/FamilyRelationship';
+import YourSelft from './component/YourSelft';
+import EventOfMe from './component/EventOfMe';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -104,6 +109,11 @@ export default function App() {
             {/* Body */}
             {ui === 0 && <Overview />}
             {ui === 1 && <SchoolEducation />}
+            {ui === 2 && <Homeland />}
+            {ui === 3 && <Contact />}
+            {ui === 4 && <FamilyRelationship />}
+            {ui === 5 && <YourSelft />}
+            {ui === 6 && <EventOfMe />}
           </Grid>
         </div>
       </div>

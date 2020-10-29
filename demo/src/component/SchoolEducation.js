@@ -6,19 +6,11 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Box from '@material-ui/core/Box';
-import PublicIcon from '@material-ui/icons/Public';
 import ModelFull from './ModelFull';
 import HeaderTitle from './HeaderTitle';
 import Item from './Item';
-
-const options = [" Sửa ", "Xóa"];
-
-const ITEM_HEIGHT = 48;
+import ButtonMore from './ButtonMore';
 
 const useStyles = makeStyles((theme) => ({
     section1: {
@@ -32,18 +24,6 @@ const useStyles = makeStyles((theme) => ({
 export default function SchoolEducation() {
     const classes = useStyles();
 
-    // button More
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const open = Boolean(anchorEl);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
     return (
         <>
             {/* col 2 */}
@@ -93,43 +73,7 @@ export default function SchoolEducation() {
                                     </Box>
                                     {/* Content-Icon */}
                                     <Box ml="auto">
-                                        <IconButton
-                                            aria-label="more"
-                                            aria-haspopup="true"
-                                        >
-                                            <PublicIcon />
-                                        </IconButton>
-                                        <IconButton
-                                            aria-label="more"
-                                            aria-controls="long-menu"
-                                            aria-haspopup="true"
-                                            onClick={handleClick}
-                                        >
-                                            <MoreHorizIcon />
-                                        </IconButton>
-                                        <Menu
-                                            id="long-menu"
-                                            anchorEl={anchorEl}
-                                            keepMounted
-                                            open={open}
-                                            onClose={handleClose}
-                                            PaperProps={{
-                                                style: {
-                                                    maxHeight: ITEM_HEIGHT * 4.5,
-                                                    width: "10ch"
-                                                }
-                                            }}
-                                        >
-                                            {options.map((option) => (
-                                                <MenuItem
-                                                    key={option}
-                                                    selected={option === "Pyxis"}
-                                                    onClick={handleClose}
-                                                >
-                                                    {option}
-                                                </MenuItem>
-                                            ))}
-                                        </Menu>
+                                        <ButtonMore numberCheck="1"/>
                                     </Box>
                                 </Box>
                             </div>
@@ -181,43 +125,7 @@ export default function SchoolEducation() {
                                     </Box>
                                     {/* Content-Icon */}
                                     <Box ml="auto">
-                                        <IconButton
-                                            aria-label="more"
-                                            aria-haspopup="true"
-                                        >
-                                            <PublicIcon />
-                                        </IconButton>
-                                        <IconButton
-                                            aria-label="more"
-                                            aria-controls="long-menu"
-                                            aria-haspopup="true"
-                                            onClick={handleClick}
-                                        >
-                                            <MoreHorizIcon />
-                                        </IconButton>
-                                        <Menu
-                                            id="long-menu"
-                                            anchorEl={anchorEl}
-                                            keepMounted
-                                            open={open}
-                                            onClose={handleClose}
-                                            PaperProps={{
-                                                style: {
-                                                    maxHeight: ITEM_HEIGHT * 4.5,
-                                                    width: "10ch"
-                                                }
-                                            }}
-                                        >
-                                            {options.map((option) => (
-                                                <MenuItem
-                                                    key={option}
-                                                    selected={option === "Pyxis"}
-                                                    onClick={handleClose}
-                                                >
-                                                    {option}
-                                                </MenuItem>
-                                            ))}
-                                        </Menu>
+                                        <ButtonMore numberCheck="2"/>
                                     </Box>
                                 </Box>
                             </div>

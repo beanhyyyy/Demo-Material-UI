@@ -4,7 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
-const Item = (props) => {
+const ItemRight = (props) => {
     return (
         <ListItem >
             <ListItemAvatar>
@@ -17,4 +17,4 @@ const Item = (props) => {
     )
 }
 
-export default Item;
+export default ItemRight;
