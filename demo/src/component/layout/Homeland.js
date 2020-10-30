@@ -6,10 +6,10 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ImageIcon from '@material-ui/icons/Image';
 import Box from '@material-ui/core/Box';
-import ModelFull from './ModelFull';
-import HeaderTitle from './HeaderTitle';
-import Item from './Item';
-import ButtonMore from './ButtonMore';
+import ModelFull from '../ModelFull';
+import HeaderTitle from '../HeaderTitle';
+import Item from '../Item';
+import ButtonMore from '../ButtonMore';
 
 const useStyles = makeStyles((theme) => ({
     section1: {

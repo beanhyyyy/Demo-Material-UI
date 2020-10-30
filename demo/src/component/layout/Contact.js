@@ -11,9 +11,9 @@ import HttpIcon from '@material-ui/icons/Http';
 import CakeIcon from '@material-ui/icons/Cake';
 import WcIcon from '@material-ui/icons/Wc';
 import Box from '@material-ui/core/Box';
-import Item from './Item';
-import HeaderTitle from './HeaderTitle';
-import ButtonMore from './ButtonMore';
+import Item from '../Item';
+import HeaderTitle from '../HeaderTitle';
+import ButtonMore from '../ButtonMore';
 
 
 const useStyles = makeStyles((theme) => ({

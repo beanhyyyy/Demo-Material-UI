@@ -7,10 +7,10 @@ import List from '@material-ui/core/List';
 import ImageIcon from '@material-ui/icons/Image';
 import WorkIcon from '@material-ui/icons/Work';
 import Box from '@material-ui/core/Box';
-import ModelFull from './ModelFull';
-import HeaderTitle from './HeaderTitle';
-import Item from './Item';
-import ButtonMore from './ButtonMore';
+import ModelFull from '../ModelFull';
+import HeaderTitle from '../HeaderTitle';
+import Item from '../Item';
+import ButtonMore from '../ButtonMore';
 
 const useStyles = makeStyles((theme) => ({
     section1: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function YourSelft() {
+export default function SchoolEducation() {
     const classes = useStyles();
 
     return (
@@ -30,11 +30,18 @@ export default function YourSelft() {
             <Grid item sm={9} xs={12} >
                 <Paper className={classes.paper}>
                     {/* Header */}
-                    <HeaderTitle title="Giới thiệu về bản thân" />
+                    <HeaderTitle title="Công việc" />
                     <Divider />
                     {/* Modal */}
                     <ModelFull
-                        placeholder=" Giới thiệu về bản thân"
+                        numberCheck="3"
+                        labelTextField1="Công ty"
+                        labelTextField2="Chức vụ"
+                        labelTextField3="Thành phố / Tỉnh"
+                        placeholder=" Mô tả công việc"
+                        title="Khoảng thời gian"
+                        label1="Tôi hiện đang làm việc tại đây"
+                        label2="Tôi đã làm việc tại đây"
                     />
                     {/* Content */}
                     <List className={classes.list2}>
@@ -42,12 +49,14 @@ export default function YourSelft() {
                             {
                                 id: 0,
                                 icon: <ImageIcon />,
-                                text: "Đơn giản, dễ tính, vui vẻ, chân thành và nhiệt tình",
+                                text: "Làm Dev tại Hahalolo và Làm biếng ở Nhà1",
+                                secondText: "Quá khứ: Halotimes và Teen1s"
                             },
                             {
                                 id: 1,
                                 icon: <WorkIcon />,
-                                text: "Đơn giản, dễ tính, vui vẻ, chân thành và nhiệt tình",
+                                text: "Làm Dev tại Hahalolo và Làm biếng ở Nhà2",
+                                secondText: "Quá khứ: Halotimes và Teen1s"
                             }
                         ].map(i => (
                             <div>
@@ -74,12 +83,17 @@ export default function YourSelft() {
                 {/* Paper-2 */}
                 <Paper className={classes.paper}>
                     {/* Header */}
-                    <HeaderTitle title="Các tên khác" />
+                    <HeaderTitle title="Học vấn" />
                     <Divider />
                     {/* Modal */}
                     <ModelFull
-                        numberCheck="1"
-                        labelTextField1="Biệt danh của bạn"
+                        numberCheck="2"
+                        labelTextField1="Trường học"
+                        labelTextField2="Thành phố / Tỉnh"
+                        placeholder=" Mô tả công việc"
+                        title="Khoảng thời gian"
+                        label1="Đã tốt nghiệp"
+                        label2="Đang học"
                     />
                     {/* Content */}
                     <List className={classes.list2}>
@@ -87,79 +101,14 @@ export default function YourSelft() {
                             {
                                 id: 0,
                                 icon: <ImageIcon />,
-                                text: "UI",
-                                secondText: "Biệt danh"
+                                text: "Làm Dev tại Hahalolo và Làm biếng ở Nhà1",
+                                secondText: "Quá khứ: Halotimes và Teen1s"
                             },
                             {
                                 id: 1,
                                 icon: <WorkIcon />,
-                                text: "Tiến Sĩ Hóa",
-                                secondText: "Khác"
-                            },
-                            {
-                                id: 2,
-                                icon: <WorkIcon />,
-                                text: "コナン",
-                                secondText: "Tên khai sinh"
-                            }
-                        ].map(i => (
-                            <div>
-                                <Divider variant="inset" component="li" />
-                                <Box
-                                    display="flex"
-                                    flexWrap="nowrap"
-                                    p={1}
-                                    m={1}
-                                    bgcolor="background.paper"
-                                >
-                                    <Box>
-                                        <Item key={i.id}  {...i} />
-                                    </Box>
-                                    {/* Content-Icon */}
-                                    <Box ml="auto">
-                                        <ButtonMore numberCheck="2"/>
-                                    </Box>
-                                </Box>
-                            </div>
-                        ))}
-                    </List>
-                </Paper>
-                {/* Paper-3 */}
-                <Paper className={classes.paper}>
-                    {/* Header */}
-                    <HeaderTitle title="Trích dẫn yêu thích" />
-                    <Divider />
-                    {/* Modal */}
-                    <ModelFull
-                        placeholder=" Giới thiệu về bản thân"
-                    />
-                    {/* Content */}
-                    <List className={classes.list2}>
-                        {[
-                            {
-                                id: 0,
-                                icon: <ImageIcon />,
-                                text: " 1. Yêu Tổ Quốc, yêu đồng bào."
-                            },
-                            {
-                                id: 1,
-                                icon: <ImageIcon />,
-                                text: " 2. Học tập tốt, lao động tốt."
-                            },
-                            {
-                                id: 2,
-                                icon: <ImageIcon />,
-                                text: " 3. Đoàn kết tốt, kỷ luật tốt."
-                            },
-                            {
-                                id: 3,
-                                icon: <ImageIcon />,
-                                text: " 4. Giữ gìn vệ sinh thật tốt."
-                            },
-                            {
-                                id: 4,
-                                icon: <ImageIcon />,
-                                text: " 5. Khiêm tốn, thật thà, dũng cảm."
+                                text: "Làm Dev tại Hahalolo và Làm biếng ở Nhà2",
+                                secondText: "Quá khứ: Halotimes và Teen1s"
                             }
                         ].map(i => (
                             <div>

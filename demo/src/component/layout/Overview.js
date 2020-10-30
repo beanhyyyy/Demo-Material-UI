@@ -11,10 +11,10 @@ import PhoneIphone from '@material-ui/icons/PhoneIphone';
 import Cake from '@material-ui/icons/Cake';
 import Wc from '@material-ui/icons/Wc';
 import Box from '@material-ui/core/Box';
-import Item from './Item';
-import ItemRight from './ItemRight';
-import ButtonMore from './ButtonMore';
-import ButtonEdit from './ButtonEdit';
+import Item from '../Item';
+import ItemRight from '../ItemRight';
+import ButtonMore from '../ButtonMore';
+import ButtonEdit from '../ButtonEdit';
 
 const useStyles = makeStyles((theme) => ({
   list2: {

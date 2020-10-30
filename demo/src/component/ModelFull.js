@@ -106,7 +106,7 @@ const ModelFull = (props) => {
                                         );
                                     default:
                                         return (
-                                            alert('Model Full : Not Checknumber')
+                                            console.log('Page Khong can textField')
                                         );
                                 }
                             })()}
