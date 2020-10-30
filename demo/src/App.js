@@ -6,14 +6,14 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Overview from './component/layout/Overview';
-import SchoolEducation from './component/layout/SchoolEducation';
+import Overview from './component/screens/Overview';
+import SchoolEducation from './component/screens/SchoolEducation';
 import HeaderTitle from './component/HeaderTitle';
-import Homeland from './component/layout/Homeland';
-import Contact from './component/layout/Contact';
-import FamilyRelationship from './component/layout/FamilyRelationship';
-import YourSelft from './component/layout/YourSelft';
-import EventOfMe from './component/layout/EventOfMe';
+import Homeland from './component/screens/Homeland';
+import Contact from './component/screens/Contact';
+import FamilyRelationship from './component/screens/FamilyRelationship';
+import YourSelft from './component/screens/YourSelft';
+import EventOfMe from './component/screens/EventOfMe';
 
 const useStyles = makeStyles((theme) => ({
   root: {
